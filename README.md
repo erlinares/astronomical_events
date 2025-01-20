@@ -9,8 +9,8 @@ Análisis de eventos astronómicos diseñado para procesar y analizar grandes vo
 - [Instalación](#instalación)
 - [Uso](#uso)
 - [Diseño del Modelo de Datos](#diseño-del-modelo-de-datos)
-- [Flujo de Trabajo Git](#flujo-de-trabajo-git)
 - [Stack Tecnológico](#stack-tecnológico)
+- [Flujo de Trabajo Git](#flujo-de-trabajo-git)
 
 ## 🎯 Descripción General
 
@@ -115,18 +115,6 @@ DIM_LOCATION
 - **Particionamiento**: Por año para mejorar el rendimiento
 - **Formato Parquet**: Compresión eficiente y lectura columnar
 
-## 🌿 Flujo de Trabajo Git
-
-### Branches Principales
-- `main`: Código en producción
-- `develop`: Rama de desarrollo principal
-
-### Feature Branches
-1. `feature/simulate-data`: Generación de datos
-2. `feature/process-data`: Procesamiento ETL
-3. `feature/datamart-design`: Diseño dimensional
-
-
 
 ## 🛠 Stack Tecnológico
 
@@ -136,3 +124,41 @@ DIM_LOCATION
 - **Desarrollo**: Python, Git
 - **Plataforma**: Databricks
 - **Testing**: no aplica
+
+## 🌿 Flujo de Trabajo Git
+
+### Branches Principales
+- `main`: Código en producción
+
+### Feature Branches
+1. `feature/simulate-data`: Generación de datos
+2. `feature/process-data`: Procesamiento ETL
+3. `feature/datamart-design`: Diseño dimensional
+
+- feature/simulate-data
+git checkout -b feature/simulate-data
+** Implementar los Cambios
+git add .
+git commit -m "Change rows of data simulation"
+git push origin feature/simulate-data
+
+- feature/process-data
+git checkout -b feature/process-data
+** Implementar los Cambios
+git add .
+git commit -m "Update dataset "
+git push origin feature/process-data
+
+- feature/datamart-design
+git checkout -b feature/datamart-design
+** Implementar los Cambios
+git add .
+git commit -m "Update diagram "
+git push origin feature/datamart-design
+
+Después de realizar los cambios hay que hacer nmerges directo en main
+git push origin main
+
+o ir directo a Github
+
+
