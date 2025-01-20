@@ -31,35 +31,16 @@ Create Diagram using this code
 
 
 erDiagram
-    FACT_LUNAR_EVENTS ||--o{ DIM_TIME : occurs_at
-    FACT_LUNAR_EVENTS ||--o{ DIM_LOCATION : happens_in
     FACT_LUNAR_EVENTS ||--o{ DIM_EVENT_TYPE : is_of_type
+    FACT_LUNAR_EVENTS ||--o{ DIM_TIME : occurs_in
+    FACT_LUNAR_EVENTS ||--o{ DIM_LOCATION : occurs_in
 
     FACT_LUNAR_EVENTS {
         string event_id PK
+        string event_type_key FK
         string time_key FK
         string location_key FK
-        string event_type_key FK
-        float duration
-        float magnitude
         string details
-    }
-
-    DIM_TIME {
-        string time_key PK
-        date full_date
-        int year
-        int month
-        int day
-        string moon_phase
-    }
-
-    DIM_LOCATION {
-        string location_key PK
-        string region
-        float latitude
-        float longitude
-        string timezone
     }
 
     DIM_EVENT_TYPE {
@@ -67,4 +48,25 @@ erDiagram
         string type_name
         string category
         string description
+    }
+
+    DIM_TIME {
+        string time_key PK
+        timestamp timestamp
+        int year
+        int month
+        int day
+        string quarter
+        string season
+    }
+
+    DIM_LOCATION {
+        string location_key PK
+        string region
+        string country
+        string continent
+        string hemisphere
+        float latitude
+        float longitude
+        string timezone
     }
