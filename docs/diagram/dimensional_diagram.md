@@ -6,30 +6,11 @@
 - Version:  1.0
 
 
-# ******************************************************************************************************
-# || DESCRIPTION
-# || --------------------------------------------------------------------------------------------------
-# || PROJECT       	: Lunar Events
-# || FILE        	: dimensional_diagram.txt
-# || SOURCE         : 
-# || TARGET         : /
-# || OBJETIVE		: Create Diagram ER
-# || Reprocess      : Yes
-# || NOTES      	: TBD
-# || SCHEDULER		: TBD
-# || JOB			: TBD
-# || VERSION  DEVELOPER	        PROVIDER              DATE			 DESCRIPTION
-# || --------------------------------------------------------------------------------------------------
-# || 	1	  EDGAR RIOS        SYNTHETIC       	  2025-01-19	Create Diagram ER
-# ******************************************************************************************************
-
-
 
 Visit the homepage: https://mermaid.js.org/syntax/entityRelationshipDiagram.html
 
 Create Diagram using this code
 
-%%mermaid
 erDiagram
     FACT_LUNAR_EVENTS ||--o{ DIM_TIME : occurs_at
     FACT_LUNAR_EVENTS ||--o{ DIM_LOCATION : happens_in
